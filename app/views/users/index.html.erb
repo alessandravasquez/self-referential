@@ -1,0 +1,31 @@
+
+<div>
+  <% @users.each do |user| %>
+    <div class="col-md-4 user-profiles">
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            <img class="media-object img-responsive img-thumbnail" src="<%= user.picture %>" style="max-width: 150px;max-height:150px;">
+          </a>
+        </div>
+        <div class="media-body media-middle">
+          <h4 class="media-heading"><%= user.name %></h4>
+          <p><%= user.bio %></p>
+        </div>
+      </div>
+      <div class="">
+        <div class="col-md-4 text-center">
+          Followers Count <br>
+          <%= user.followers.count %>
+        </div>
+        <div class="col-md-4 text-center">
+          Comments Count <br>
+          <%= user.comments.count %>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-primary btn-lg">Follow</button>
+        </div>
+      </div>
+    </div>
+<% end %>
+</div>
